@@ -1,0 +1,35 @@
+package com.tutorialspoint;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.lang.reflect.Method;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import com.tutorialspoint.util.Utils;
+import java.util.Scanner;
+
+
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args) throws Exception{
+        try{	
+
+        Scanner in = new Scanner(System.in);
+	while(in.hasNextLine()){
+	    String argString = in.nextLine();
+	    args = argString.split(" ");
+            Object[] o = (Object[]) Utils.exec(args[0], args[1]);
+            //Utils.exec(args[0], args[1]);
+	    for(Object oo: o){
+	        System.out.println(oo);
+	    }
+	}
+
+
+        }catch(Exception e){ System.out.println(e.getMessage());}
+    }
+}
+
+
