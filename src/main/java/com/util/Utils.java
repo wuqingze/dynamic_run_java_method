@@ -12,6 +12,8 @@ public class Utils{
 
    public final static Map<String,String> TYPE_MAP = new HashMap<String, String>();
 
+   public final static MavenProjectClassLoader MAVEN_PROJECT_CLASS_LOADER = new MavenProjectClassLoader();
+
    static{
 	TYPE_MAP.put("byte","java.lang.Byte");
 	TYPE_MAP.put("short","java.lang.Short");
@@ -133,4 +135,70 @@ public class Utils{
 	}
 	return true;
    }
+
+   public static Object exec(String beanId) throws Exception{
+	//System.out.println(String.format("===================beanId:%s",beanId));
+	//ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+
+	//Args args = null; 
+	//try{ args = (Args)context.getBean(beanId);}
+	//catch(Exception e){
+	//    throw new Exception(String.format("================"+beanId+"引用在配置文件中未定义或定义出错\n"+e.getMessage()));
+	//}
+       
+	//if(args.className == null){ throw new Exception("执行类className为空");}
+	//if(args.methodName == null){ throw new Exception("执行方法methodName为空");}
+
+	//Object objectBean = null;
+	//Object methodBean = null;
+        //
+	//
+	////初始化测试对象
+	//try{ 
+	//    Class clazz = MAVEN_PROJECT_CLASS_LOADER.findClass(args.className);
+	//    if(args.constructorArgs == null){
+	//	objectBean = clazz.getConstructor().newInstance();
+	//    } else{
+	//	Class[] constructorClasses = new Class[args.constructorArgs.length]; 
+	//	for(int i=0;i<constructorClasses.length; i++){
+	//	    constructorClasses[i] = args.constructorArgs[i].getClass();
+	//	}
+
+	//	Array.stream(clazz.getConstructors()).forEach( constructor -> {
+	//	    	
+	//	});
+	//    //objectBean = clazz.getConstrucotr
+	//    context.getBean(args.className);}
+	//catch(Exception e){
+	//    throw e;
+	//}
+	
+	//Args methodBean = (Args) context.getBean(methodName);
+	//Class[] methodType = new Class[methodBean.values==null?0:methodBean.values.length];
+	//if(methodBean.values != null){
+	//    for(int i=0;i<methodBean.values.length;i++){
+	//	methodType[i] = methodBean.values[i].getClass();
+	//    }
+	//}
+	//for(Method method: objectBean.getClass().getDeclaredMethods()){
+	//   if(method.getName().equals(methodBean.methodName)){
+	//	if(classArrayEquals(methodType, method.getParameterTypes())){
+	//	    System.out.println("=============执行程序:"+
+	//		String.format("类名:%s\t方法名:%s\t方法参数:%s", 
+	//		    objectBean.getClass().getName(),
+	//		    methodBean.getMethodName(), 
+	//		    Arrays.toString(method.getParameterTypes())));
+	//	    return method.invoke(objectBean, methodBean.values);
+	//        } 
+	//    }
+	//}
+	//throw new Exception(
+	//   String.format("==========找不到方法,类名:%s\t方法名:%s\t方法参数:%s", 
+	//       objectBean.getClass().getName(),
+	//       methodBean.getMethodName(), 
+	//       Arrays.toString(methodType)));
+	return null;
+    }
+
+
 }

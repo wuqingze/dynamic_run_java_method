@@ -1,7 +1,7 @@
 com/tutorialspoint/CustomerArgs.class
 com/tutorialspoint/InitHelloWorld.class
-com/tutorialspoint/Main1$Test.class
 com/tutorialspoint/Main1.class
+com/tutorialspoint/Test.class
 com/tutorialspoint/MethodTest.class
 com/tutorialspoint/util/Utils.class
 com/tutorialspoint/util/MavenProjectClassLoader.class
