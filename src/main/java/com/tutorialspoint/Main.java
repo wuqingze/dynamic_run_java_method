@@ -7,6 +7,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import com.tutorialspoint.util.Utils;
 import java.util.Scanner;
+import com.alibaba.fastjson.JSON;
 
 
 import java.util.Scanner;
@@ -35,19 +36,19 @@ public class Main{
   //          Object objectBean = context.getBean("methodtest");
 //
 //	    System.out.println(objectBean == null);
-	    System.out.println("hello world");
-	    System.out.println("hello world");
 
 	    Scanner in = new Scanner(System.in);
-	    System.out.println("输入参数:");
+	    System.out.print("输入参数:");
 	    while(in.hasNextLine()){
 	        String arg = in.nextLine().trim();
                 try{	
                     Object result = Utils.exec(arg);
-		    String out = result instanceof Object[]?Arrays.toString((Object[]) result):result.toString(); 
-	            System.out.println("===================程序执行结果:"+out==null?"":out);
+	            System.out.println("===================程序执行结果:"+JSON.toJSONString(result));
+		    //String out = result instanceof Object[]?Arrays.toString((Object[]) result):result.toString(); 
+	            //System.out.println("===================程序执行结果:"+out==null?"":out);
+	            //System.out.println("===================程序执行结果:0000000000");
 	        } catch(Exception e){ System.out.println(e.getMessage());}
-	        System.out.println("输入参数:");
+	        System.out.print("输入参数:");
            }
 
     }

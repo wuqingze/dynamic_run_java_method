@@ -31,7 +31,7 @@ public class Utils{
 	TYPE_MAP.put("float[]", "java.lang.Float[]");
 	TYPE_MAP.put("double[]","java.lang.Double[]");
 	TYPE_MAP.put("char[]","java.lang.Character[]");
-	TYPE_MAP.put("boolean","java.lang.Boolean[]");
+	TYPE_MAP.put("boolean[]","java.lang.Boolean[]");
    }
    
     public static Class forName(String className) throws ClassNotFoundException{
@@ -152,11 +152,11 @@ public class Utils{
 
 	String stackMsg = String.format("类名:%s\t构造参数类型:%s\t构造参数:%s\t方法名:%s\t方法参数类型%s\t方法参数:%s", 
 	                         args.className,
-			         JSON.toJSONString(Arrays.stream(Optional.ofNullable(args.constructorArgs).orElse(new Object[0])).map(a -> a.getClass().getCanonicalName()).collect(Collectors.toList())),
-				 Arrays.toString(Optional.ofNullable(args.constructorArgs).orElse(new Object[0])),
+			         JSON.toJSONString(Arrays.stream(Optional.ofNullable(args.constructorArgs).orElse(new Object[0])).map(a -> a.getClass().getCanonicalName()).toArray(String[]::new)),
+				 JSON.toJSONString(Optional.ofNullable(args.constructorArgs).orElse(new Object[0])),
 			         args.methodName,
-			         JSON.toJSONString(Arrays.stream(Optional.ofNullable(args.values).orElse(new Object[0])).map(a->a.getClass().getCanonicalName()).collect(Collectors.toList())),
-				 Arrays.toString(Optional.ofNullable(args.values).orElse(new Object[0]))
+			         JSON.toJSONString(Arrays.stream(Optional.ofNullable(args.values).orElse(new Object[0])).map(a->a.getClass().getCanonicalName()).toArray(String[]::new)),
+				 JSON.toJSONString(Optional.ofNullable(args.values).orElse(new Object[0]))
 			        ); 
 
 	//初始化测试对象并执行方法

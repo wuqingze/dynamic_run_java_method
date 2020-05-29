@@ -10,11 +10,17 @@ import java.util.Scanner;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
+import java.lang.reflect.*;
+import com.alibaba.fastjson.JSON;
 
 
 import java.util.Scanner;
 
 public class Main1{
+    
+    public Main1(boolean n){
+	System.out.println(n);
+    }
 
     public static void main(String[] args) throws Exception{
 //            ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
@@ -62,7 +68,22 @@ public class Main1{
 	//});	
 
 	
-	System.out.println(Arrays.toString(Main1.class.getConstructors()));
+	//System.out.println(Arrays.toString(Main1.class.getConstructors()));
+	//System.out.println(boolean.class.getCanonicalName());
+	//for(Constructor c: Main1.class.getConstructors()){
+	//    Class[] clazzs = c.getParameterTypes();
+	//    for(Class clazz : clazzs){
+	//	System.out.println(clazz.getCanonicalName());
+	//    }
+	//}
+
+	//int[] a= new int[]{1,2,3,4};
+	//int[] b= Arrays.stream(a).map(n->n).toArray();
+	//System.out.println(JSON.toJSONString(a));
+
+	Object[] is = new Object[1];
+	is[0] = new Integer("1024");
+	System.out.println(JSON.toJSONString(is));
     }
 }
 

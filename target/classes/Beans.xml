@@ -254,9 +254,344 @@
 	</property>
     </bean> 
 
+    <bean id="test15" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="intTest"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+        <property name="values"> 
+	    <list> 
+		<array value-type="byte">
+	            <value>0x10</value>
+	            <value>0x20</value>
+	            <value>0x30</value>
+		</array>
+	    </list>
+	</property>
+    </bean> 
+
+    <bean id="test16" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="intTest"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+        <property name="values"> 
+	    <list> 
+		<array value-type="short">
+	            <value>0x10</value>
+	            <value>0x20</value>
+	            <value>0x30</value>
+		</array>
+	    </list>
+	</property>
+    </bean> 
+
+    <bean id="test17" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="intTest"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+        <property name="values"> 
+	    <list> 
+		<array value-type="long">
+	            <value>0x10</value>
+	            <value>0x20</value>
+	            <value>0x30</value>
+		</array>
+	    </list>
+	</property>
+    </bean>
+
+    <bean id="test18" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="intTest"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+        <property name="values"> 
+	    <list> 
+		<array value-type="float">
+	            <value>127</value>
+	            <value>126</value>
+	            <value>125</value>
+		</array>
+	    </list>
+	</property>
+    </bean>
+
+    <bean id="test19" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="intTest"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+        <property name="values"> 
+	    <list> 
+		<array value-type="double">
+	            <value>10000000000.11</value>
+	            <value>1000000.22</value>
+	            <value>100.33</value>
+		</array>
+	    </list>
+	</property>
+    </bean>
+
+    <bean id="test20" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="intTest"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+        <property name="values"> 
+	    <list> 
+		<array value-type="char">
+	            <value>a</value>
+	            <value>b</value>
+	            <value>c</value>
+		</array>
+	    </list>
+	</property>
+    </bean>
+
+    <bean id="test21" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="intTest"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+        <property name="values"> 
+	    <list> 
+		<array value-type="boolean">
+	            <value>true</value>
+	            <value>false</value>
+	            <value>true</value>
+		</array>
+	    </list>
+	</property>
+    </bean>
+
+    <bean id="test23" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+    </bean>
+
+    <bean id="test24" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="byte">-128</value>	
+	    </list>
+	</property>
+    </bean>
 
 
+    <bean id="test25" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="short">-128</value>	
+	    </list>
+	</property>
+    </bean>
 
 
+    <bean id="test26" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="int">-128</value>	
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test27" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="long">-128</value>	
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test28" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="float">-128</value>	
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test29" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="double">-128</value>	
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test30" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="char">j</value>	
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test31" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="boolean">false</value>	
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test32" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="byte">
+		<value type="byte">-128</value>	
+		<value type="byte">-128</value>	
+		<value type="byte">-128</value>	
+		<value type="byte">-128</value>	
+		<value type="byte">-128</value>	
+		<value type="byte">-128</value>	
+		<value type="byte">-128</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test33" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="short">
+		<value type="short">-128</value>	
+		<value type="short">-128</value>	
+		<value type="short">-128</value>	
+		<value type="short">-128</value>	
+		<value type="short">-128</value>	
+		<value type="short">-128</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test34" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="int">
+		<value type="int">-128</value>	
+		<value type="int">-128</value>	
+		<value type="int">-128</value>	
+		<value type="int">-128</value>	
+		<value type="int">-128</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test35" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="long">
+		<value type="long">-128</value>	
+		<value type="long">-128</value>	
+		<value type="long">-128</value>	
+		<value type="long">-128</value>	
+		<value type="long">-128</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test36" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="float">
+		<value type="float">-128</value>	
+		<value type="float">-128</value>	
+		<value type="float">-128</value>	
+		<value type="float">-128</value>	
+		<value type="float">-128</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test37" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="double">
+		<value type="double">-128</value>	
+		<value type="double">-128</value>	
+		<value type="double">-128</value>	
+		<value type="double">-128</value>	
+		<value type="double">-128</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test38" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="char">
+		<value type="char">4</value>	
+		<value type="char">4</value>	
+		<value type="char">4</value>	
+		<value type="char">4</value>	
+		<value type="char">4</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test39" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+	    <array value-type="boolean">
+		<value type="boolean">true</value>	
+		<value type="boolean">true</value>	
+		<value type="boolean">true</value>	
+		<value type="boolean">true</value>	
+		<value type="boolean">true</value>	
+	    </array>
+	    </list>
+	</property>
+    </bean>
+
+
+    <bean id="test40" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="constructorArgs" >
+	    <list>
+		<value type="short">-128</value>	
+	    </list>
+	</property>
+    </bean>
 
 </beans>
