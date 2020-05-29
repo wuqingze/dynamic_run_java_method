@@ -44,22 +44,25 @@ public class Main1{
 //		    newInstance(_args)
 //	);
 
-	Arrays.stream(Test.class.getConstructors()).forEach(constructor -> { 
-	    System.out.println(
-	        Arrays.stream(constructor.getParameterTypes())
-		.map(type -> type.getName())
-		.collect(Collectors.toList())
-	    );
-	});	
+	//Arrays.stream(Test.class.getConstructors()).forEach(constructor -> { 
+	//    System.out.println(
+	//        Arrays.stream(constructor.getParameterTypes())
+	//	.map(type -> type.getName())
+	//	.collect(Collectors.toList())
+	//    );
+	//});	
 
 
-        Arrays.stream(Test.class.getConstructors()).forEach(constructor -> { 
-	    System.out.println(
-	        Arrays.stream(constructor.getParameterTypes())
-		.map(type -> type.getCanonicalName())
-		.collect(Collectors.toList())
-	    );
-	});	
+        //Arrays.stream(Test.class.getConstructors()).forEach(constructor -> { 
+	//    System.out.println(
+	//        Arrays.stream(constructor.getParameterTypes())
+	//	.map(type -> type.getCanonicalName())
+	//	.collect(Collectors.toList())
+	//    );
+	//});	
+
+	
+	System.out.println(Arrays.toString(Main1.class.getConstructors()));
     }
 }
 

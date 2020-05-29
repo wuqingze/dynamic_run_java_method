@@ -44,5 +44,10 @@ public class MethodTest{
 	System.out.println(j);
 	System.out.println("i,j:----------");
     }
+
+    
+    public void intTest(boolean i){
+	System.out.println("boolean："+i);
+    }
 }
 
