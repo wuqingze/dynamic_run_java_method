@@ -8,6 +8,8 @@ import java.util.Arrays;
 import com.tutorialspoint.util.Utils;
 import java.util.Scanner;
 import java.nio.file.*;
+import java.util.*;
+import java.util.stream.*;
 
 
 import java.util.Scanner;
@@ -27,28 +29,41 @@ public class Main1{
 	//System.out.println(Object.class.getResource("") == null);
 	//System.out.println(System.getProperty("user.dir"));
 
-	Object[] _args = new Object[1];
-	_args[0] = new Integer("1024");
-	System.out.println(
-	    Class.forName("com.tutorialspoint.Main1$Test").
-		getConstructor(int.class)
-	//	    newInstance(_args)
-	);
+	//Object[] _args = new Object[1];
+	//_args[0] = new Integer("1024");
+
+//	System.out.println(
+//	    Class.forName("com.tutorialspoint.Test").
+//		getConstructor(int.class).
+//		    newInstance(_args)
+//	);
+
+//        System.out.println(
+//	    Class.forName("com.tutorialspoint.Test").
+//		getConstructor(int.class).
+//		    newInstance(_args)
+//	);
+
+	//Arrays.stream(Test.class.getConstructors()).forEach(constructor -> { 
+	//    System.out.println(
+	//        Arrays.stream(constructor.getParameterTypes())
+	//	.map(type -> type.getName())
+	//	.collect(Collectors.toList())
+	//    );
+	//});	
+
+
+        //Arrays.stream(Test.class.getConstructors()).forEach(constructor -> { 
+	//    System.out.println(
+	//        Arrays.stream(constructor.getParameterTypes())
+	//	.map(type -> type.getCanonicalName())
+	//	.collect(Collectors.toList())
+	//    );
+	//});	
+
+	
+	System.out.println(Arrays.toString(Main1.class.getConstructors()));
     }
-
-
-class Test{
-    
-    private int i;
-
-    public Test(int i){
-	this.i = i;
-    }
-
-    public String toString(){
-	return "Test i="+this.i;
-    }
-}
 }
 
 

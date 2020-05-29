@@ -14,21 +14,22 @@ import java.util.Scanner;
 public class Main{
 
     public static void main(String[] args) throws Exception{
-	    Scanner in = new Scanner(System.in);
-	    while(in.hasNextLine()){
-	        String argString = in.nextLine();
-	        args = argString.split(" ");
-                try{	
-                    Object result = Utils.exec(args[0], args[1]);
-	            if(result instanceof Object[]){
-	                for(Object oo: (Object[])result){
-	                    System.out.println(oo);
-	                }
-	            }else{
-	                System.out.println("===================程序执行结果:"+result);
-	            }
-	        } catch(Exception e){ System.out.println(e.getMessage());}
-            }   
+	  //  Scanner in = new Scanner(System.in);
+	  //  while(in.hasNextLine()){
+	  //      String argString = in.nextLine();
+	  //      args = argString.split(" ");
+          //      try{	
+          //          Object result = Utils.exec(args[0], args[1]);
+	  //          if(result instanceof Object[]){
+	  //              for(Object oo: (Object[])result){
+	  //                  System.out.println(oo);
+	  //              }
+	  //          }else{
+	  //              System.out.println("===================程序执行结果:"+result);
+	  //          }
+	  //      } catch(Exception e){ System.out.println(e.getMessage());}
+          //  }   
+
 //	    Utils.exec("methodtest", "test00");
  //           ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
   //          Object objectBean = context.getBean("methodtest");
@@ -36,6 +37,18 @@ public class Main{
 //	    System.out.println(objectBean == null);
 	    System.out.println("hello world");
 	    System.out.println("hello world");
+
+	    Scanner in = new Scanner(System.in);
+	    System.out.println("输入参数:");
+	    while(in.hasNextLine()){
+	        String arg = in.nextLine().trim();
+                try{	
+                    Object result = Utils.exec(arg);
+		    String out = result instanceof Object[]?Arrays.toString((Object[]) result):result.toString(); 
+	            System.out.println("===================程序执行结果:"+out==null?"":out);
+	        } catch(Exception e){ System.out.println(e.getMessage());}
+	        System.out.println("输入参数:");
+           }
 
     }
 }
