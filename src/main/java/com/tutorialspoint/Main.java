@@ -34,6 +34,8 @@ public class Main{
   //          Object objectBean = context.getBean("methodtest");
 //
 //	    System.out.println(objectBean == null);
+	    System.out.println("hello world");
+	    System.out.println("hello world");
 
     }
 }
