@@ -127,7 +127,8 @@ public class Utils{
 
 	for(int i=0;i<a1.length;i++){
 	    String name1 = a1[i].getCanonicalName();
-	    String name2 = a2[i].getCanonicalName();
+	    String name2 = a2[i].getCanonicalName();	
+	    System.out.println(String.format("name1:%s,name2:%s",name1,name2));
 	    if(name1.equals(name2)){ continue;}else{
 		name1 = Optional.ofNullable(TYPE_MAP.get(name1)).orElse(name1);
 		name2 = Optional.ofNullable(TYPE_MAP.get(name2)).orElse(name2);
@@ -159,6 +160,7 @@ public class Utils{
 				 JSON.toJSONString(Optional.ofNullable(args.values).orElse(new Object[0]))
 			        ); 
 
+
 	//初始化测试对象并执行方法
 	try{ 
 	    //因为同一个类只能被同一个加载器加载一次，否则报LinkageError,所以这里每次都创建一个新的加载器进行加载
@@ -177,12 +179,26 @@ public class Utils{
 			if(args.methodName.equals(m.getName()) && classArrayEquals(valuesTypes, m.getParameterTypes())){
 			    System.out.println("==========执行方法,"+stackMsg);
 			    m.setAccessible(true);
-			    return m.invoke(execObject, args.values);
+
+			    //System.out.println(String.format("args_value_length:%d,args_value:%s",args.values.length,
+			    //    JSON.toJSONString(args.values)));
+			    //Object exearg = args.values.length==1?(Object)args.values[0]:(Object)args.values;
+			    //System.out.println("==========exearg,"+JSON.toJSONString(exearg));
+			    //System.out.println("==========exearg class:,"+exearg.getClass().getCanonicalName());
+			    //return m.invoke(execObject, exearg);
+
+			    System.out.println(String.format("method name:%s, method types:%s", m.getName(),
+				JSON.toJSONString(Arrays.stream(m.getParameterTypes()).map(t -> t.getCanonicalName()).
+				toArray(String[]::new))));
+			    System.out.println("args values type:"+args.values.getClass().getCanonicalName());
+			    System.out.println("args values[0] type:"+args.values[0].getClass().getCanonicalName());
+			    return m.invoke(execObject, (Object)args.values[0]);
 			}
 		    }
 		}
 	    }
 	} catch(Exception e){
+	    e.printStackTrace();
 	    throw e;
 	}
 	

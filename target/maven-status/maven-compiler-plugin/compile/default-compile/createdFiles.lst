@@ -5,7 +5,6 @@ com/tutorialspoint/Args.class
 com/tutorialspoint/InitHelloWorld.class
 com/tutorialspoint/Main1.class
 com/tutorialspoint/Test.class
-com/tutorialspoint/MethodTest.class
 com/tutorialspoint/util/Utils.class
 com/tutorialspoint/util/MavenProjectClassLoader.class
 com/tutorialspoint/HelloWorld.class

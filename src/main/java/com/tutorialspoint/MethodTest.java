@@ -7,6 +7,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import com.tutorialspoint.util.Utils;
 import java.util.Scanner;
+import com.alibaba.fastjson.JSON;
 
 
 import java.util.Scanner;
@@ -14,6 +15,10 @@ import java.util.Scanner;
 public class MethodTest{
 
     private Object o;
+
+    public Object getO(){ return this.o;}
+
+    public void setO(Object o) { this.o = o;}
 
     public MethodTest(){
 	System.out.println("constructor");
@@ -183,8 +188,19 @@ public class MethodTest{
     }
 
     public Object printO(){
+	System.out.println("=======================");
 	System.out.println(this.o);
 	return this.o;
+    }
+
+    public Object printO(HelloWorld[] hello){
+	System.out.println("=========printO:"+JSON.toJSONString(hello));
+	return hello;
+    }
+
+    public Object printO(HelloWorld o){
+	System.out.println("=========printO:"+JSON.toJSONString(o));
+	return o;
     }
 }
 

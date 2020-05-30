@@ -81,9 +81,47 @@ public class Main1{
 	//int[] b= Arrays.stream(a).map(n->n).toArray();
 	//System.out.println(JSON.toJSONString(a));
 
-	Object[] is = new Object[1];
-	is[0] = new Integer("1024");
-	System.out.println(JSON.toJSONString(is));
+//	Object[] is = new Object[1];
+//	is[0] = new Integer("1024");
+//	System.out.println(JSON.toJSONString(is));
+
+	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+
+	Args _args = null; 
+	try{ _args = (Args)context.getBean("test41");}
+	catch(Exception e){
+	    throw new Exception("引用在配置文件中未定义或定义出错\n"+e.getMessage());
+	}
+	MethodTest m = new MethodTest();
+
+	//Object[] aa = new HelloWorld[2];
+	//HelloWorld a1 = new HelloWorld();
+	//a1.message = "ajflaj";
+	//aa[0] = a1;
+	//HelloWorld a2 = new HelloWorld();
+	//a2.message = "ajflaj";
+	//aa[1] = a2;
+	//System.out.println("jkldsjfalj=============9999988888888889");
+
+	Method method =  MethodTest.class.getMethod("printO", HelloWorld[].class);
+
+	Arrays.stream(_args.values).forEach(e-> System.out.println(e.getClass().getCanonicalName()));
+	Arrays.stream(method.getParameterTypes()).forEach(e -> System.out.println(e.getCanonicalName()));
+	System.out.println("args values class"+_args.values.getClass().getCanonicalName());
+
+	method.setAccessible(true);
+	Object invokearg = _args.values.length==1?_args.values[0]:_args.values;
+	//System.out.println("invoke args"+JSON.toJSONString(invokearg));
+	System.out.println("args values "+JSON.toJSONString(_args.values));
+
+	//method.invoke(m,invokearg);
+	method.invoke(m,  _args.values);
+
+	//MethodTest m = new MethodTest();
+	//HelloWorld a1 = new HelloWorld();
+	//a1.message = "ajflaj";
+	//Method method =  MethodTest.class.getMethod("printO", HelloWorld.class);
+	//method.invoke(m,a1);
     }
 }
 

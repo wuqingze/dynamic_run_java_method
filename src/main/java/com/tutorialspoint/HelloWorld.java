@@ -3,7 +3,7 @@ package com.tutorialspoint;
 import java.util.List;
 
 public class HelloWorld {
-   private String message;
+   public String message;
 
    public List<String> namesList;
 

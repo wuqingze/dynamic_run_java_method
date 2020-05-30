@@ -594,4 +594,40 @@
 	</property>
     </bean>
 
+    <bean id="test41" class="com.tutorialspoint.Args" scope="prototype"> 
+        <property name="methodName" value="printO"/>
+	<property name="className" value="com.tutorialspoint.MethodTest"/>
+	<property name="values" >
+	    <list>
+	        <array value-type="com.tutorialspoint.HelloWorld">
+		    <bean class="com.tutorialspoint.HelloWorld">
+			<property name="message" value="xxxxxxxxx1"/>
+			<property name="namesList">
+			    <list>
+				<value>apple</value>
+				<value>apple1</value>
+				<value>apple2</value>
+				<value>apple3</value>
+				<value>apple4</value>
+			    </list>
+			</property>
+		    </bean>
+                <!--    <bean class="com.tutorialspoint.HelloWorld">
+			<property name="message" value="xxxxxxxxx2"/>
+			<property name="namesList">
+			    <list>
+				<value>apple</value>
+				<value>apple1</value>
+				<value>apple2</value>
+				<value>apple3</value>
+				<value>apple4</value>
+			    </list>
+			</property>
+		    </bean>
+		    -->
+		</array>
+	    </list>
+	</property>
+    </bean>
+
 </beans>
