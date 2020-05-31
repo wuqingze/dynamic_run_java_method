@@ -8,8 +8,11 @@ public class MavenProjectClassLoader extends ClassLoader {
 
     @Override
     protected Class<?> findClass(String name) {
-        String myPath = "file:///"+System.getProperty("user.dir")+ "/target/classes/"
-	    + name.replace(".","/") + ".class";
+        String myPath = "file:///"+
+                        System.getProperty("user.dir").replace(File.separator, "/") +
+                        "/target/classes/" +
+                        name.replace(".","/") +
+                        ".class";
         System.out.println("===================classpath:"+myPath);
         byte[] cLassBytes = null;
         Path path = null;

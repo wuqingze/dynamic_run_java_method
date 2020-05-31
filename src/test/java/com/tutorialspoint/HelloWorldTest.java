@@ -87,7 +87,6 @@ public class HelloWorldTest{
 	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         Args o = (Args)context.getBean("arg3");
 	System.out.println(Arrays.toString(o.getValues()));
-	System.out.println(Arrays.toString(o.getTypes()));
     }
 
 
