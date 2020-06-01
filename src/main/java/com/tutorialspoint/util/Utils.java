@@ -143,6 +143,7 @@ public class Utils{
 	System.out.println("========================================beanId:"+beanId);
 	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
+	System.out.println("========================================context:"+(context==null));
 	Args args = null; 
 	try{ args = (Args)context.getBean(beanId);}
 	catch(Exception e){
@@ -180,63 +181,65 @@ public class Utils{
 			if(args.methodName.equals(m.getName()) && classArrayEquals(valuesTypes, m.getParameterTypes())){
 			    System.out.println("==========执行方法,"+stackMsg);
 			    m.setAccessible(true);
-
+			    System.out.println("++---args value instance of HelloWorld"+(args.values[0] instanceof HelloWorld));
+			    //return m.invoke(execObject, args.values[0]);
+			    return m.invoke(new MethodTest(), new HelloWorld());
 			    //System.out.println(String.format("args_value_length:%d,args_value:%s",args.values.length,
 			    //    JSON.toJSONString(args.values)));
 			    //Object exearg = args.values.length==1?(Object)args.values[0]:(Object)args.values;
 			    //System.out.println("==========exearg,"+JSON.toJSONString(exearg));
 			    //System.out.println("==========exearg class:,"+exearg.getClass().getCanonicalName());
 			    //return m.invoke(execObject, exearg);
-
-			    System.out.println(String.format("method name:%s, method types:%s", m.getName(),
-				JSON.toJSONString(Arrays.stream(m.getParameterTypes()).map(t -> t.getCanonicalName()).
-				toArray(String[]::new))));
-			    System.out.println("args values type:"+args.values.getClass().getCanonicalName());
-			    System.out.println("args values[0] type:"+args.values[0].getClass().getCanonicalName());
-			    //return m.invoke(execObject, (Object)args.values[0]);
-			    HelloWorld[] hw = new HelloWorld[1];
-			    hw[0] = new HelloWorld();
-			    System.out.println("execObject class name:"+execObject.getClass().getName());
-			    //return m.invoke(execObject, hw); 
-	                    Method method =  MethodTest.class.getMethod("printO", HelloWorld[].class);
-			    System.out.println("execObject instanceof of MethodTest:"+(execObject instanceof MethodTest));
-			    System.out.println("execObject class name:"+execObject.getClass().getName());
-			//    return method.invoke(execObject,hw);
-//			    return method.invoke((MethodTest)execObject,hw);
-
-ApplicationContext context1 = new ClassPathXmlApplicationContext("Beans.xml");
-
-	Args _args = null; 
-	try{ _args = (Args)context1.getBean("test41");}
-	catch(Exception e){
-	    throw new Exception("引用在配置文件中未定义或定义出错\n"+e.getMessage());
-	}
-	MethodTest m1 = new MethodTest();
-
-	//Object[] aa = new HelloWorld[2];
-	//HelloWorld a1 = new HelloWorld();
-	//a1.message = "ajflaj";
-	//aa[0] = a1;
-	//HelloWorld a2 = new HelloWorld();
-	//a2.message = "ajflaj";
-	//aa[1] = a2;
-	//System.out.println("jkldsjfalj=============9999988888888889");
-
-	//Method method1 =  MethodTest.class.getMethod("printO", HelloWorld[].class);
-	Arrays.stream(execObject.getClass().getMethods()).forEach(mm -> System.out.println(mm.getName() +"--"+ Arrays.toString(mm.getParameterTypes())));
-	Method method1 =  execObject.getClass().getMethod("printO", HelloWorld[].class);
-
-	Arrays.stream(_args.values).forEach(e-> System.out.println(e.getClass().getCanonicalName()));
-	Arrays.stream(method1.getParameterTypes()).forEach(e -> System.out.println(e.getCanonicalName()));
-	System.out.println("args values class"+_args.values.getClass().getCanonicalName());
-
-	method1.setAccessible(true);
-	Object invokearg = _args.values.length==1?_args.values[0]:_args.values;
-	//System.out.println("invoke args"+JSON.toJSONString(invokearg));
-	System.out.println("-----------------------args values "+JSON.toJSONString(_args.values));
-
+//
+//			    System.out.println(String.format("method name:%s, method types:%s", m.getName(),
+//				JSON.toJSONString(Arrays.stream(m.getParameterTypes()).map(t -> t.getCanonicalName()).
+//				toArray(String[]::new))));
+//			    System.out.println("args values type:"+args.values.getClass().getCanonicalName());
+//			    System.out.println("args values[0] type:"+args.values[0].getClass().getCanonicalName());
+//			    //return m.invoke(execObject, (Object)args.values[0]);
+//			    HelloWorld[] hw = new HelloWorld[1];
+//			    hw[0] = new HelloWorld();
+//			    System.out.println("execObject class name:"+execObject.getClass().getName());
+//			    //return m.invoke(execObject, hw); 
+//	                    Method method =  MethodTest.class.getMethod("printO", HelloWorld[].class);
+//			    System.out.println("execObject instanceof of MethodTest:"+(execObject instanceof MethodTest));
+//			    System.out.println("execObject class name:"+execObject.getClass().getName());
+//			//    return method.invoke(execObject,hw);
+////			    return method.invoke((MethodTest)execObject,hw);
+//
+//ApplicationContext context1 = new ClassPathXmlApplicationContext("Beans.xml");
+//
+//	Args _args = null; 
+//	try{ _args = (Args)context1.getBean("test41");}
+//	catch(Exception e){
+//	    throw new Exception("引用在配置文件中未定义或定义出错\n"+e.getMessage());
+//	}
+//	MethodTest m1 = new MethodTest();
+//
+//	//Object[] aa = new HelloWorld[2];
+//	//HelloWorld a1 = new HelloWorld();
+//	//a1.message = "ajflaj";
+//	//aa[0] = a1;
+//	//HelloWorld a2 = new HelloWorld();
+//	//a2.message = "ajflaj";
+//	//aa[1] = a2;
+//	//System.out.println("jkldsjfalj=============9999988888888889");
+//
+//	//Method method1 =  MethodTest.class.getMethod("printO", HelloWorld[].class);
+//	Arrays.stream(execObject.getClass().getMethods()).forEach(mm -> System.out.println(mm.getName() +"--"+ Arrays.toString(mm.getParameterTypes())));
+//	Method method1 =  execObject.getClass().getMethod("printO", HelloWorld[].class);
+//
+//	Arrays.stream(_args.values).forEach(e-> System.out.println(e.getClass().getCanonicalName()));
+//	Arrays.stream(method1.getParameterTypes()).forEach(e -> System.out.println(e.getCanonicalName()));
+//	System.out.println("args values class"+_args.values.getClass().getCanonicalName());
+//
+//	method1.setAccessible(true);
+//	Object invokearg = _args.values.length==1?_args.values[0]:_args.values;
+//	//System.out.println("invoke args"+JSON.toJSONString(invokearg));
+//	System.out.println("-----------------------args values "+JSON.toJSONString(_args.values));
+//
+////	method1.invoke(execObject, args.values);
 //	method1.invoke(execObject, args.values);
-	method1.invoke(execObject, args.values);
 
 
 			}

@@ -67,9 +67,9 @@ public class HelloWorldTest{
 	Method m = o.getClass().getDeclaredMethod("getValues");
 	Object[] ary = (Object[]) m.invoke(o);
 	System.out.println("=============="+Arrays.toString(ary)); 
-	m = o.getClass().getDeclaredMethod("getTypes");
-	ary = (Object[]) m.invoke(o);
-	System.out.println("=============="+Arrays.toString(ary)); 
+	//m = o.getClass().getDeclaredMethod("getTypes");
+	//ary = (Object[]) m.invoke(o);
+	//System.out.println("=============="+Arrays.toString(ary)); 
    }
 
     @Test
@@ -101,11 +101,11 @@ public class HelloWorldTest{
 
     @Test
     public void test08() throws Exception{
-	Scanner in = new Scanner(System.in);
-	while(in.hasNextLine()){
-	    String argsString = in.nextLine();
-	    System.out.println(argsString);
-	}
+//	Scanner in = new Scanner(System.in);
+//	while(in.hasNextLine()){
+//	    String argsString = in.nextLine();
+//	    System.out.println(argsString);
+//	}
         //Scanner in = new Scanner(System.in);
 	//while(in.hasNextLine()){
 	//    String argString = in.nextLine();
