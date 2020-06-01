@@ -114,9 +114,12 @@ public class Main1{
 	//System.out.println("invoke args"+JSON.toJSONString(invokearg));
 	System.out.println("args values "+JSON.toJSONString(_args.values));
 
-	//method.invoke(m,invokearg);
+        method.invoke(m,invokearg);
 	method.invoke(m,  _args.values);
 
+	String  s= "helrjwej";
+        
+	System.out.println((String)s);
 	//MethodTest m = new MethodTest();
 	//HelloWorld a1 = new HelloWorld();
 	//a1.message = "ajflaj";
